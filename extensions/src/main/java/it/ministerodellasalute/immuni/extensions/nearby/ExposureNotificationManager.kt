@@ -113,7 +113,9 @@ class ExposureNotificationManager(
     suspend fun update() {
         var isEnabled = false
         try {
-            isEnabled = exposureNotificationClient.isEnabled()
+            // isEnabled = exposureNotificationClient.isEnabled()
+            // For debug only
+            isEnabled = true
         } catch (e: Exception) {
             e.printStackTrace()
         } finally {
@@ -133,7 +135,8 @@ class ExposureNotificationManager(
         }
 
         try {
-            exposureNotificationClient.start()
+            // Commented for testing purposes
+            // exposureNotificationClient.start()
         } catch (exception: Exception) {
 
             val completer = optInCompleter
